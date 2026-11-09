@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Just Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <a href="index.html" class="logo"><span>Just</span> REPORT</a>
+      <nav class="switch">
+        <a href="index.html" class="switch-item">Laporkan</a>
+        <a href="dashboard.html" class="switch-item is-active">Dashboard</a>
+      </nav>
+    </div>
+
+    <header class="dash-head">
+      <h1>Dashboard</h1>
+      <p>Pantau seluruh laporan warga yang masuk beserta status penanganannya secara real-time. Dari sini kamu bisa melihat mana yang sudah selesai dan mana yang masih menunggu tindak lanjut.</p>
+    </header>
+
+    <section class="stats">
+      <article class="stat">
+        <div class="stat-info">
+          <svg class="stat-icon" width="28" height="34" viewBox="0 0 28 34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 2H5a3 3 0 0 0-3 3v24a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3V11L17 2Z"/>
+            <path d="M17 2v9h9"/>
+            <path d="M8 17h12M8 22h12M8 27h8"/>
+          </svg>
+          <div class="stat-text">
+            <h2>Total Laporan</h2>
+            <p>Semua laporan yang masuk</p>
+          </div>
+        </div>
+        <div class="stat-num">14</div>
+      </article>
+
+      <article class="stat">
+        <div class="stat-info">
+          <svg class="stat-icon" width="28" height="34" viewBox="0 0 28 34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 31H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h18a3 3 0 0 1 3 3v12"/>
+            <path d="M8 9h12M8 14h12M8 19h6"/>
+            <circle cx="21" cy="25" r="6"/>
+            <path d="m18.5 25 1.8 1.8 3.2-3.6"/>
+          </svg>
+          <div class="stat-text">
+            <h2>Laporan Selesai</h2>
+            <p>Laporan yang sudah ditangani</p>
+          </div>
+        </div>
+        <div class="stat-num">8</div>
+      </article>
+    </section>
+
+    <section class="reports">
+      <h2>Semua Laporan</h2>
+      <div class="table-card">
+        <div class="table-scroll">
+
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Kategori</th>
+                <th>Deskripsi</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody id="reports-table-body"></tbody>
+
+          </table>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="javascript/data.js"></script>
+  <script src="javascript/app.js"></script>
+</body>
+</html>

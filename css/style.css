@@ -1,0 +1,716 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #251da1;
+  --yellow: #e8e600;
+  --pink: #e00068;
+  --amber: #ffd23f;
+  --white: #ffffff;
+  --line: rgba(255, 255, 255, 0.6);
+  --green-1: #2ec4a0;
+  --green-2: #3dd6a0;
+  --card-green: #3ec29d;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2.3rem 2.3rem 3.8rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  color: var(--yellow);
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: -0.1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo span {
+  font-weight: 800;
+}
+
+.switch {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  border-radius: 0.9rem;
+  background: var(--pink);
+  overflow: hidden;
+}
+
+.switch-item {
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--pink);
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.switch-item.is-active {
+  background: var(--amber);
+  color: var(--pink);
+}
+
+.switch-item:not(.is-active):hover {
+  background: #f0187b;
+}
+
+.hero {
+  margin-top: 4.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.hero-sub {
+  color: var(--yellow);
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.hero-title {
+  color: var(--yellow);
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.1rem;
+}
+
+.hero-title span {
+  font-weight: 800;
+  margin-right: 0.3rem;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.3rem;
+  row-gap: 1.1rem;
+  border: 0.1rem solid var(--line);
+  border-radius: 0.4rem;
+  padding: 1.8rem 1.5rem 2.9rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-left: 0.8rem;
+}
+
+.field-location,
+.field-desc {
+  grid-column: 1 / -1;
+}
+
+.field--desc {
+  margin-top: 0.5rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--white);
+  background: transparent;
+  border: 0.1rem solid var(--line);
+  border-radius: 0.8rem;
+  padding: 0.7rem 0.8rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+select option {
+  color: #111;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--white);
+  opacity: 1;
+}
+
+textarea {
+  background: var(--pink);
+  border: none;
+  border-radius: 0.6rem;
+  min-height: 7.4rem;
+  resize: vertical;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 0.1rem rgba(232, 230, 0, 0.35);
+}
+
+textarea:focus {
+  box-shadow: 0 0 0 0.1rem var(--yellow);
+}
+
+.submit {
+  grid-column: 1 / -1;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 17.1rem;
+  max-width: 100%;
+  height: 2.9rem;
+  margin-top: 2.1rem;
+  border: none;
+  border-radius: 999rem;
+  background: linear-gradient(90deg, var(--green-1), var(--green-2));
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.submit:hover {
+  filter: brightness(1.08);
+}
+
+.submit:active {
+  transform: scale(0.98);
+}
+
+.submit:focus-visible {
+  outline: 0.1rem solid var(--yellow);
+  outline-offset: 0.2rem;
+}
+
+.dash-head {
+  margin-top: 5.3rem;
+  margin-bottom: 4rem;
+}
+
+.dash-head h1 {
+  color: var(--yellow);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.1rem;
+}
+
+.dash-head p {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.stat {
+  display: flex;
+  min-height: 6rem;
+  min-width: 0;
+}
+
+.stat-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+  background: var(--card-green);
+  padding: 1rem 1.1rem;
+}
+
+.stat-icon {
+  flex-shrink: 0;
+  width: 2.3rem;
+  height: 2.8rem;
+  object-fit: contain;
+}
+
+.stat-text {
+  min-width: 0;
+}
+
+.stat-info h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stat-info p {
+  font-size: 0.6rem;
+  font-weight: 300;
+  margin-top: 0.4rem;
+}
+
+.stat-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 7rem;
+  background: var(--pink);
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.reports h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1.3rem;
+}
+
+.table-card {
+  border: 0.1rem solid var(--line);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 1rem 0.8rem;
+  white-space: nowrap;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 1.6rem;
+}
+
+th {
+  font-size: 1rem;
+  font-weight: 400;
+  border-bottom: 0.1rem solid var(--line);
+}
+
+td {
+  font-size: 0.9rem;
+  font-weight: 300;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.12);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.status-pill {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999rem;
+}
+
+.badge-done {
+  background: var(--card-green);
+  color: #07302a;
+}
+
+.badge-progress {
+  background: var(--amber);
+  color: #3a2f00;
+}
+
+.badge-wait {
+  background: var(--pink);
+  color: var(--white);
+}
+
+@media (max-width: 1200px) {
+  .page {
+    padding: 2rem 2rem 3.5rem;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 993px) {
+  .hero {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .card {
+    column-gap: 2.5rem;
+  }
+
+  .dash-head {
+    margin-top: 4.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .stats {
+    gap: 1.2rem;
+  }
+
+  .stat-num {
+    min-width: 6rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1.8rem 1.5rem 3rem;
+  }
+
+  .hero {
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    column-gap: 2rem;
+  }
+
+  .field label {
+    font-size: 1.1rem;
+  }
+
+  .dash-head {
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .dash-head h1 {
+    font-size: 2.2rem;
+  }
+
+  .stats {
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .stat-info {
+    gap: 0.8rem;
+    padding: 0.9rem;
+  }
+
+  .stat-info h2 {
+    font-size: 0.9rem;
+  }
+
+  .stat-num {
+    min-width: 5.5rem;
+    font-size: 2.3rem;
+  }
+
+  .reports h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 617px) {
+  .page {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .hero {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem 2rem;
+    row-gap: 1.3rem;
+  }
+
+  .field label {
+    font-size: 1rem;
+  }
+
+  .field--desc {
+    margin-top: 0;
+  }
+
+  .submit {
+    width: 100%;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .dash-head {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .dash-head h1 {
+    font-size: 1.9rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    margin-bottom: 2.3rem;
+  }
+
+  .stat {
+    min-height: 5.5rem;
+  }
+
+  .stat-num {
+    min-width: 6rem;
+  }
+
+  th,
+  td {
+    padding: 0.8rem 0.5rem;
+    white-space: normal;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0.9rem;
+  }
+
+  th {
+    font-size: 0.9rem;
+  }
+
+  td {
+    font-size: 0.8rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .switch-item {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .topbar {
+    gap: 0.6rem;
+  }
+
+  .dash-head h1 {
+    font-size: 1.7rem;
+  }
+
+  .stat-icon {
+    width: 1.8rem;
+    height: 2.3rem;
+  }
+
+  .stat-num {
+    min-width: 5rem;
+    font-size: 2.2rem;
+  }
+
+  th,
+  td {
+    padding: 0.7rem 0.4rem;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0.7rem;
+  }
+
+  th {
+    font-size: 0.8rem;
+  }
+
+  td {
+    font-size: 0.7rem;
+  }
+
+  .badge {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 356px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .switch-item {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.6rem;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+  }
+
+  .field label {
+    font-size: 0.9rem;
+  }
+
+  .dash-head h1 {
+    font-size: 1.5rem;
+  }
+
+  .stat-info {
+    gap: 0.6rem;
+    padding: 0.7rem;
+  }
+
+  .stat-info h2 {
+    font-size: 0.8rem;
+  }
+
+  .stat-icon {
+    width: 1.4rem;
+    height: 1.8rem;
+  }
+
+  .stat-num {
+    min-width: 4.5rem;
+    font-size: 1.9rem;
+  }
+
+  th,
+  td {
+    padding: 0.6rem 0.3rem;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0.6rem;
+  }
+
+  th {
+    font-size: 0.7rem;
+  }
+
+  td {
+    font-size: 0.6rem;
+  }
+
+  .badge {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  input,
+  select,
+  .submit {
+    min-height: 2.8rem;
+  }
+
+  .switch-item {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+}

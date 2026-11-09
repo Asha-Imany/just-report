@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="switch">
+      <a href="index.html" class="switch-item is-active">Laporkan</a>
+      <a href="dashboard.html" class="switch-item">Dashboard</a>
+    </nav>
+
+    <header class="hero">
+      <p class="hero-sub">something broken?</p>
+      <h1 class="hero-title"><span>Just</span> REPORT !</h1>
+    </header>
+
+    <form id="facility-report-form" class="card" action="#" method="post" onsubmit="handleFormSubmit(event)">
+      <div class="field field-name">
+        <label for="input-reporter">Pelapor</label>
+        <input type="text" id="input-reporter" name="reporter" placeholder="Nama lengkap Pelapor">
+      </div>
+
+      <div class="field field-category">
+        <label for="select-category">Kategori kerusakan</label>
+        <select id="select-category" name="category">
+          <option value="" disabled selected>Pilih kategori kerusakan</option>
+          <option value="listrik">Listrik</option>
+          <option value="air">Air</option>
+          <option value="furnitur">Furnitur</option>
+          <option value="jaringan">Jaringan</option>
+          <option value="lainnya">Lainnya</option>
+        </select>
+      </div>
+
+      <div class="field field-desc">
+        <label for="text-area-input">Deskripsi kerusakan</label>
+        <textarea id="text-area-input" name="description" placeholder="Jelaskan detail kerusakan yang terjadi ..." maxlength="200"></textarea>
+      </div>
+
+      <button type="submit" class="submit">Laporkan</button>
+    </form>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="javascript/data.js"></script>
+  <script src="javascript/app.js"></script>
+</body>
+</html>
